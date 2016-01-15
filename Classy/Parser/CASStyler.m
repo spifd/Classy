@@ -186,6 +186,7 @@ NSArray *ClassGetSubclasses(Class parentClass) {
         }
         styleNode.invocations = invocations;
     }
+    self.styleVars = parser.styleVars;
 }
 
 #pragma mark - private

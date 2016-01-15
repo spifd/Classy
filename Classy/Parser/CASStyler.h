@@ -19,6 +19,8 @@
 
 @property (nonatomic, copy) NSDictionary *variables;
 
+@property (nonatomic, copy) NSDictionary *styleVars;
+
 /**
  *  File path which contains style data
  */
