@@ -195,6 +195,11 @@
         *color = [UIColor.class performSelector:selector];
 #pragma clang diagnostic pop
         return YES;
+    } else {
+      UIImage* pattern = [UIImage imageNamed:value];
+      if (pattern) {
+        *color = [[UIColor alloc] initWithPatternImage:pattern];
+      }
     }
 
     return NO;

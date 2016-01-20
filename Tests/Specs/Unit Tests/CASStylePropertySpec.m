@@ -203,6 +203,16 @@ SpecBegin(CASStyleProperty)
     expect(color).to.equal([UIColor colorWithHue:200.0/360.0 saturation:60.0/100.0 brightness:100.0/100.0 alpha:0.5]);
 }
 
+- (void)testWellFormedPatternColor {
+  NSArray *valueTokens = CASTokensFromString(@"test_image_1");
+  
+  CASStyleProperty *prop = [[CASStyleProperty alloc] initWithNameToken:nil valueTokens:valueTokens];
+  
+  UIColor *color = nil;
+  [prop transformValuesToUIColor:&color];
+  expect(color).toNot.beNil();
+}
+
 - (void)testResolveSimpleExpression {
     NSArray *valueTokens = CASTokensFromString(@"3 * 2 + 5");
 
